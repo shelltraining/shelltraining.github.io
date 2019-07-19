@@ -1,1 +1,103 @@
-Hello World
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Timer</title>
+    <meta name="viewport" content="width=640" />
+
+    <style type="text/css">
+      .green {
+        background-color: #00ff51;
+      }
+      .light-green {
+        background-color: #9ee80c;
+      }
+      .yellow {
+        background-color: #ffca00;
+      }
+      .orange {
+        background-color: #e86d0c;
+      }
+      .red {
+        background-color: #ff0000;
+      }
+      #container {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        position: fixed;
+      }
+      #button {
+        background-color: rgba(192, 192, 192, 0.5);
+        border: 0;
+        bottom: 0;
+        display: block;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 4em;
+        font-weight: 100;
+        letter-spacing: 3px;
+        margin: 0;
+        left: 0;
+        right: 0;
+        padding: 22px 0;
+        position: fixed;
+      }
+      #box {
+        color: white;
+        display: block;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 40em;
+        font-weight: 100;
+        line-height: 1;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container" class="green">
+      <main id="box">5</main>
+      <button id="button">Start</button>
+      <!-- Siren from http://soundbible.com/1355-Warning-Siren.html -->
+    </div>
+
+    <script type="text/javascript">
+      var container = document.getElementById("container");
+      var button = document.getElementById("button");
+      var box = document.getElementById("box");
+      var audio = document.getElementById("alarm");
+      var defaultClass = container.className;
+      var defaultTime = parseInt(box.innerHTML); // seconds
+      var time;
+      var interval;
+      button.onclick = function() {
+        this.innerHTML = "Reset";
+        audio.pause();
+        audio.currentTime = 0;
+        time = defaultTime;
+        clearInterval(interval);
+        tick();
+        interval = setInterval(tick, 60000); // one minute
+      };
+      var tick = function() {
+        if (time <= 0) {
+          container.className = "red";
+          audio.play();
+        } else if (time == 1) {
+          container.className = "orange";
+        } else if (time == 2) {
+          container.className = "yellow";
+        } else if (time == 3) {
+          container.className = "light-green";
+        } else {
+          container.className = defaultClass;
+        }
+        updateText(time);
+        time--;
+      };
+      var updateText = function(value) {
+        box.innerHTML = value;
+        document.title = value;
+      };
+    </script>
+  </body>
+</html>
