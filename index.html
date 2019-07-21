@@ -1,31 +1,89 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Timer</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Bolt - Coming Soon Template</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" >
+    <!-- Fonts -->
+    <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css">
+    <!-- Slicknav -->
+    <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css">
+    <!-- Off Canvas Menu -->
+    <link rel="stylesheet" type="text/css" href="assets/css/menu_sideslide.css">
+    <!-- Color Switcher -->
+    <link rel="stylesheet" type="text/css" href="assets/css/vegas.min.css">
+    <!-- Animate -->
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
+    <!-- Main Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <!-- Responsive Style -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css">
+
   </head>
   <body>
-    <div
-      data-type="countdown"
-      data-id="1327751"
-      class="tickcounter"
-      style="width: 100%; position: relative; padding-bottom: 25%"
-    >
-      <a
-        href="//www.tickcounter.com/countdown/1327751/my-countdown"
-        title="My countdown"
-        >My countdown</a
-      ><a href="//www.tickcounter.com/" title="Countdown">Countdown</a>
+
+    <div class="bg-wraper overlay has-vignette">
+      <div id="example" class="slider opacity-50 vegas-container" style="height: 983px;"></div>
     </div>
-    <script>
-      (function(d, s, id) {
-        var js,
-          pjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s);
-        js.id = id;
-        js.src = "//www.tickcounter.com/static/js/loader.js";
-        pjs.parentNode.insertBefore(js, pjs);
-      })(document, "script", "tickcounter-sdk");
+
+    <!-- Coundown Section Start -->
+    <section class="countdown-timer">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="heading-count">
+              <h2>FREEDOM IN</h2>
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="row time-countdown justify-content-center">
+              <div id="clock" class="time-count"></div>
+        </div>
+      </div>
+</br></br>
+<p>Template Designed & Developed by <a style="
+    color: #fff;
+    text-decoration: underline;
+" rel="nofollow" >Ravikumar</a></p>
+    </section>
+    <!-- Coundown Section End -->
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div class="loader" id="loader-1"></div>
+    </div>
+    <!-- End Preloader -->
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="assets/js/jquery-min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/vegas.min.js"></script>
+    <script src="assets/js/jquery.countdown.min.js"></script>
+    <script src="assets/js/classie.js"></script>
+    <script src="assets/js/jquery.nav.js"></script>
+    <script src="assets/js/jquery.easing.min.js"></script> 
+    <script src="assets/js/main.js"></script>
+
+
+    <script type="text/javascript">
+      $("#example").vegas({
+          timer: true,
+          delay: 6000,
+          transitionDuration: 2000,
+          transition: "blur",
+          slides: [
+              { src: "assets/img/slide1.jpg" },
+              { src: "assets/img/slide2.jpg" },
+              { src: "assets/img/slide3.jpg" }
+          ]
+      });
     </script>
+      
   </body>
 </html>
